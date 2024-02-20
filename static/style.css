@@ -1,0 +1,21 @@
+:root {
+  --primary: #222;
+  --accent: #008080;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: auto;
+  padding: 1rem;
+  max-width: 80ch;
+  color: var(--primary);
+}
+
+a {
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+}
