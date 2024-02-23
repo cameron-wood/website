@@ -26,9 +26,7 @@
   </nav>
   <main>{{- block "main" . }}{{- end }}</main>
   <footer>
-    {{ with .OutputFormats.Get "rss" -}}
-    <a href="{{ .Permalink }}">RSS</a>
-    {{ end }}
+    <a href="/index.xml">RSS</a>
   </footer>
 </body>
 
