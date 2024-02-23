@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      {{ if not .IsHome }}{{ with .Title}}{{ . }} | {{ end }}{{ end }}{{
-      .Site.Title }}
-    </title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="canonical" href="{{ .Permalink }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
-    <link rel="stylesheet" href="/style.css" />
-    {{ with .OutputFormats.Get "rss" -}}
-      {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    {{ if not .IsHome }}{{ with .Title}}{{ . }} | {{ end }}{{ end }}{{
+    .Site.Title }}
+  </title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="canonical" href="{{ .Permalink }}" />
+  <link rel="stylesheet" href="/normalize.css" />
+  <link rel="stylesheet" href="/style.css" />
+  {{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+  {{ end }}
+</head>
+
+<body>
+  <nav>
+    <a href="/">Home</a>
+    {{ range .Site.Sections }}
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     {{ end }}
-  </head>
-  <body>
-    <nav>
-      <a href="/">Home</a>
-      {{ range .Site.Sections }}
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      {{ end }}
-    </nav>
-    <main>{{- block "main" . }}{{- end }}</main>
-    <footer>
-      {{ with .OutputFormats.Get "rss" -}}
-      <a href="{{ .Permalink }}">RSS</a>
-      {{ end }}
-    </footer>
-  </body>
+  </nav>
+  <main>{{- block "main" . }}{{- end }}</main>
+  <footer>
+    {{ with .OutputFormats.Get "rss" -}}
+    <a href="{{ .Permalink }}">RSS</a>
+    {{ end }}
+  </footer>
+</body>
+
 </html>
