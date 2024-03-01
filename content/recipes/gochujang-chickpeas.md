@@ -30,8 +30,8 @@ to serve,
 ## Method
 
 1. drain chickpeas and add to baking tray with olive oil and salt
-1. bake at 200 for 30 minutes, until crispy
+1. bake at 180 for 30 minutes, until crispy
 1. make your sauce by combining gochujang paste, soy sauce, rice wine vinegar, honey, garlic and ginger
 1. add sauce to a pan, bring to a gentle simmer over a medium heat
 1. add chickpeas to pan and combine until sauce thickens slightly
-1. serve over rice with spring onion and lime juice
+1. serve over coriander lime rice and sprinkle with spring onions
