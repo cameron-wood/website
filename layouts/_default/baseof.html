@@ -21,6 +21,7 @@
   <nav>
     <a href="/">Home</a>
     {{ range .Site.Sections }}
+    <span>⋅</span>
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     {{ end }}
   </nav>
