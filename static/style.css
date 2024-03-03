@@ -1,5 +1,6 @@
 :root {
   --primary: #222;
+  --secondary: #fdf6e3;
   --accent: #008080;
 }
 
@@ -10,10 +11,29 @@ body {
   padding: 1rem;
   max-width: 80ch;
   color: var(--primary);
+  overflow-wrap: break-word;
 }
 
 a {
   color: var(--accent);
+}
+
+li:not(:last-child) {
+  margin-bottom: 0.25em;
+}
+
+details {
+  padding: 0.5em;
+  border-radius: 0.5em;
+  background-color: var(--secondary);
+}
+
+summary {
+  cursor: pointer;
+}
+
+details[open] summary {
+  margin-bottom: 0.5em;
 }
 
 footer {
